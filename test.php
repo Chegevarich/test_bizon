@@ -33,13 +33,13 @@ class Api
 	 */
 	public function get_api_path(array $array, string $template) : string
 	{
-        return preg_replace_callback('/%(\w+)%/', function ($matches) use ($array) {
-            $key = $matches[1];
-            if (isset($array[$key])) {
-                return rawurlencode($array[$key]);
-            }
-            return $matches[0];
-        }, $template);
+		return preg_replace_callback('/%(\w+)%/', function ($matches) use ($array) {
+			$key = $matches[1];
+			if (isset($array[$key])) {
+				return rawurlencode($array[$key]);
+		}
+			return $matches[0];
+		}, $template);
 	}
 }
 
